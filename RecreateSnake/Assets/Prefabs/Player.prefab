@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4902956896669649877}
   - component: {fileID: 4001394497047021139}
   - component: {fileID: 5193588779901653830}
+  - component: {fileID: 2133565388}
   - component: {fileID: 7096086212208113419}
-  - component: {fileID: 1820093242}
   m_Layer: 3
   m_Name: Functionality
   m_TagString: Untagged
@@ -105,8 +105,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dde6ba2975858e4fa288c9351dc85f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 1820093242}
+  _gameManager: {fileID: 0}
+  _gridMovement: {fileID: 2133565388}
   _cam: {fileID: 0}
+  _playerWorldPos: {x: 0, y: 0}
+--- !u!114 &2133565388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593695883676111938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e5a718060b2ce498f4a21beaf8c3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 5193588779901653830}
+  _isMoving: 0
+  _moveTime: 0.1
 --- !u!114 &7096086212208113419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,23 +139,9 @@ MonoBehaviour:
   _playerData: {fileID: 5193588779901653830}
   _playerInput: {fileID: 4001394497047021139}
   _mouseMoveActionString: MousePos
-  _mouseClickActionString: MouseClick
   _mouseWorldPos: {x: 0, y: 0, z: 0}
---- !u!114 &1820093242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593695883676111938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1c8d1fde1ab9e40bf7b76a01f61f5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _width: 18
-  _height: 10
-  _cellSize: 1
+  _mouseClickActionString: MouseClick
+  _playerMovementString: Movement
 --- !u!1 &3388840996570287299
 GameObject:
   m_ObjectHideFlags: 0

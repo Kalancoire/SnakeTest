@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 403586366}
   - component: {fileID: 403586367}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2676,6 +2676,10 @@ PrefabInstance:
       propertyPath: _cam
       value: 
       objectReference: {fileID: 1336338877}
+    - target: {fileID: 5193588779901653830, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 403586367}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
 --- !u!1001 &5501378051223715565
