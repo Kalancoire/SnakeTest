@@ -2656,6 +2656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5193588779901653830, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
+      propertyPath: _cam
+      value: 
+      objectReference: {fileID: 1336338877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
 --- !u!1001 &5501378051223715565
