@@ -60,10 +60,10 @@ public class GridManager
         if (x >= 0 && y >= 0 && x < _width && y < _height && System.Enum.IsDefined(typeof(GridValues), value))
         {
             _gridArray[x,y] = (GridValues)value;
-            Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x, y+1), Color.red, 100f);
-            Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x+1, y), Color.red, 100f);
-            Debug.DrawLine(GetWorldPosition(x+1,y+1), GetWorldPosition(x, y+1), Color.red, 100f);
-            Debug.DrawLine(GetWorldPosition(x+1, y+1), GetWorldPosition(x+1, y), Color.red, 100f);
+            //Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x, y+1), Color.red, 100f);
+            //Debug.DrawLine(GetWorldPosition(x,y), GetWorldPosition(x+1, y), Color.red, 100f);
+            //Debug.DrawLine(GetWorldPosition(x+1,y+1), GetWorldPosition(x, y+1), Color.red, 100f);
+            //Debug.DrawLine(GetWorldPosition(x+1, y+1), GetWorldPosition(x+1, y), Color.red, 100f);
         }
     }
 

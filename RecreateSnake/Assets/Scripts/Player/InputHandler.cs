@@ -19,6 +19,9 @@ public class InputHandler : MonoBehaviour
 
     [Header("Player Movement")]
     [SerializeField] private string _playerMovementString = "Movement";
+    [SerializeField] private float _maxInputTime;
+    [SerializeField] private float _minInputTime;
+    private float _currentInputTime;
     private InputAction _playerMovement;
 
     private void Awake()
@@ -28,15 +31,21 @@ public class InputHandler : MonoBehaviour
         _playerMovement = _playerInput.actions[_playerMovementString];
     }
 
+    private void Update()
+    {
+        if(_currentInputTime < _maxInputTime)
+        {
+            _currentInputTime += Time.deltaTime;
+        }
+    }
+
     private void OnEnable()
     {
         _mouseMoveAction.performed += OnMouseMove;
 
         _mouseClickAction.started += OnMouseClick;
 
-        //_playerMovement.started += OnMovement;
         _playerMovement.performed += OnMovement;
-        //_playerMovement.canceled += OnMovement;
     }
 
     private void OnDisable()
@@ -45,9 +54,7 @@ public class InputHandler : MonoBehaviour
 
         _mouseClickAction.started -= OnMouseClick;
 
-        //_playerMovement.started -= OnMovement;
         _playerMovement.performed -= OnMovement;
-        //_playerMovement.canceled -= OnMovement;
     }
 
     private void OnMouseMove(InputAction.CallbackContext context)
@@ -65,7 +72,18 @@ public class InputHandler : MonoBehaviour
     private void OnMovement(InputAction.CallbackContext context)
     {
         Vector2 inputVector = context.ReadValue<Vector2>();
-        _playerData.PlayerWorldPos = new Vector2Int(Mathf.RoundToInt(inputVector.x), Mathf.RoundToInt(inputVector.y));
+        Vector2 roundedVector = new Vector2Int(Mathf.RoundToInt(inputVector.x), Mathf.RoundToInt(inputVector.y));
+        if(_currentInputTime <= _maxInputTime && _currentInputTime >= _minInputTime)
+        {
+            _playerData.AddDirection(roundedVector, false);
+            _currentInputTime = 0f;
+        }
+        else if (_currentInputTime >= _maxInputTime)
+        {
+            _playerData.AddDirection(roundedVector, true);
+            _currentInputTime = 0f;
+        }
+
     }
     
 }

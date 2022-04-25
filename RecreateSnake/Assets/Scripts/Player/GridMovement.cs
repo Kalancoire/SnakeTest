@@ -33,7 +33,7 @@ public class GridMovement : MonoBehaviour
     {
         if(_isMoving == false)
         {
-            StartCoroutine(MovePlayer(_playerData.PlayerWorldPos));
+            StartCoroutine(MovePlayer(_playerData.GetDirection(true)));
         }
     }
 
