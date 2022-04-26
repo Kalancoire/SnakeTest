@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
     #region Variables
     [Header("Variables")]
     [SerializeField] private Vector2 _currentDirection;
+    [SerializeField] private int _snakeLength = 1;
     private Queue<Vector2> _queuedDirections = new Queue<Vector2>();
     #endregion
 
@@ -65,6 +66,13 @@ public class PlayerData : MonoBehaviour
         {
             _queuedDirections.Enqueue(new Vector2(0, direction.y));
         }
+    }
+
+    public void IncreaseLength()
+    {
+        _snakeLength++;
+        //Update Snake visuals
+        _gameManager.UpdateSnakePosition();
     }
     #endregion
 }

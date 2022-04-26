@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 5193588779901653830}
   - component: {fileID: 2133565388}
   - component: {fileID: 7096086212208113419}
+  - component: {fileID: 1763319683046017786}
+  - component: {fileID: 1341988583}
   m_Layer: 3
   m_Name: Functionality
   m_TagString: Untagged
@@ -108,7 +110,8 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _gridMovement: {fileID: 2133565388}
   _cam: {fileID: 0}
-  _playerWorldPos: {x: 0, y: 0}
+  _currentDirection: {x: 0, y: 0}
+  _snakeLength: 1
 --- !u!114 &2133565388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +145,45 @@ MonoBehaviour:
   _mouseWorldPos: {x: 0, y: 0, z: 0}
   _mouseClickActionString: MouseClick
   _playerMovementString: Movement
+  _maxInputTime: 0.1
+  _minInputTime: 0.05
+--- !u!114 &1763319683046017786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593695883676111938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09be24f2bfb7d0349a72414287312ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickupMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _playerData: {fileID: 5193588779901653830}
+--- !u!50 &1341988583
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2593695883676111938}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3388840996570287299
 GameObject:
   m_ObjectHideFlags: 0
