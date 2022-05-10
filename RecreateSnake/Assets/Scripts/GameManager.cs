@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     #endregion
 
+    #region Pickups
+    [Header("Pickups")]
+    [SerializeField] private SpriteRenderer _pickupSpriteRenderer;
+    [SerializeField] private PickupData _currentPickup;
+    #endregion
+
     #region Grid Data
     [Header("Grid Data")]
     [SerializeField] [Range(5,18)] private int _width = 18;
@@ -34,10 +40,6 @@ public class GameManager : MonoBehaviour
     private bool _gameStarted = false;
     public bool GameStarted { get{return _gameStarted;} set{_gameStarted = value;}}
 
-
-
-
-
     private void Awake()
     {
         _pickupDict = new Dictionary<string, PickupData>();
@@ -52,8 +54,46 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         _gameState = new GridManager(_width, _height, _cellSize);
         UpdateGameStartState();
+        UpdateCurrentPickup();
+        SpawnPickup();
     }
 
+    //Given a position, change the sprite renderer's position
+    //Given a PickupDate, change sprite
+
+    //"Spawns" a pickup via _currentPickup (visual)
+    private void SpawnPickup()
+    {
+        Vector3 position = _gameState.GetRandomEmptyPosition();
+        SpawnPickup(position);
+    }
+
+    private void SpawnPickup(Vector3 position)
+    {
+        _pickupSpriteRenderer.transform.position = position + new Vector3 (0.5f, 0.5f, 0f);
+
+        if (_currentPickup == null)
+        {
+            _currentPickup = _pickupValues[0];
+        }
+
+        _pickupSpriteRenderer.sprite = _currentPickup.Sprite;
+        SetValue(position, _currentPickup.name);
+    }
+
+    private void UpdateCurrentPickup(PickupData pickupData = null)
+    {
+        if (pickupData == null)
+        {
+            int randomIndex = Random.Range(0, _pickupValues.Count);
+            _currentPickup = _pickupValues[randomIndex];
+        }
+        else
+        {
+            _currentPickup = pickupData;
+        }
+    }
+   
     public void GetValue(Vector3 worldPosition)
     {
         _gameState.GetValue(worldPosition);
@@ -92,7 +132,14 @@ public class GameManager : MonoBehaviour
             _playerData.IncreaseLength();
             UpdateScore(points);
             _gameState.SetValue(position, GridValueSnake);
-            //Spawn new pickup after removing old
+            if (_playerData.SnakeLength != _gameState.TileCount)
+            {
+                SpawnPickup();
+            }
+            else
+            {
+                GameOver(win:true);
+            }
         }
         else
         {
@@ -106,6 +153,18 @@ public class GameManager : MonoBehaviour
     public void SetValue(Vector3 worldPosition, string name)
     {
         _gameState.SetValue(worldPosition, name);
+    }
+
+    private void GameOver(bool win)
+    {
+        if (win)
+        {
+            Debug.Log("Win!");
+        }
+        else
+        {
+            Debug.Log("Deadge");
+        }
     }
     
 }
