@@ -53,11 +53,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5771290961483436243, guid: 16b2660583659b0469bf91218edd448a, type: 3}
       propertyPath: m_Name
-      value: Apple
+      value: Apple Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8394264501379283645, guid: 16b2660583659b0469bf91218edd448a, type: 3}
       propertyPath: _data
       value: 
       objectReference: {fileID: 11400000, guid: 85aacc28bac6e4b4d8f0e2c13ad782f5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 726299221008362735, guid: 16b2660583659b0469bf91218edd448a, type: 3}
+    - {fileID: 8394264501379283645, guid: 16b2660583659b0469bf91218edd448a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16b2660583659b0469bf91218edd448a, type: 3}
