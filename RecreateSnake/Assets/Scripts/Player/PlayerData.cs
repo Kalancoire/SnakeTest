@@ -81,8 +81,13 @@ public class PlayerData : MonoBehaviour
         {
             _queuedDirections.Clear();
         }
+
+        if ((Mathf.Abs(direction.x) >= 0.5f) && Mathf.Abs(direction.y) >= 0.5f)
+        {
+            return;
+        }
         
-        if (Mathf.Abs(direction.x) > 0.5f)
+        if (Mathf.Abs(direction.x) >= 0.5f)
         {
             _queuedDirections.Enqueue(new Vector3(Mathf.Sign(direction.x) * 1f, 0f));
         }

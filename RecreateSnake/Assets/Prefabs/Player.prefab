@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2106337632333986473}
+  m_Father: {fileID: 5593681787909278812}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &4492095970759313485
@@ -71,10 +71,10 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1090911065
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Time: 0.4
+  m_Time: 0
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -128,7 +128,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.5
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &2593695883676111938
@@ -145,7 +145,6 @@ GameObject:
   - component: {fileID: 5193588779901653830}
   - component: {fileID: 2133565388}
   - component: {fileID: 7096086212208113419}
-  - component: {fileID: 1341988583}
   m_Layer: 3
   m_Name: Functionality
   m_TagString: Untagged
@@ -166,6 +165,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8882614737515399892}
+  - {fileID: 1974131444632122665}
   m_Father: {fileID: 2106337632333986473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -240,10 +240,10 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _gridMovement: {fileID: 2133565388}
   _cam: {fileID: 0}
-  _currentDirection: {x: 0, y: 0}
+  _currentDirection: {x: 0, y: 0, z: 0}
   _trailRenderer: {fileID: 4492095970759313485}
-  _snakeLength: 1
-  _timePerBlob: 0.1
+  _snakeLength: 4
+  _timePerBlob: 0
   _isMoving: 0
 --- !u!114 &2133565388
 MonoBehaviour:
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerData: {fileID: 5193588779901653830}
-  _moveTime: 0.1
+  _moveTime: 0.15
 --- !u!114 &7096086212208113419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,29 +277,8 @@ MonoBehaviour:
   _mouseWorldPos: {x: 0, y: 0, z: 0}
   _mouseClickActionString: MouseClick
   _playerMovementString: Movement
-  _maxInputTime: 0.1
-  _minInputTime: 0.05
---- !u!50 &1341988583
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2593695883676111938}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  _maxInputTime: 0.15
+  _minInputTime: 0
 --- !u!1 &3388840996570287299
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +308,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5593681787909278812}
-  - {fileID: 1974131444632122665}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -343,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8882614737515399892}
   - component: {fileID: 605987925994603195}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +383,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1090911065
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 93dd87789d71b78418ace88bed3017be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

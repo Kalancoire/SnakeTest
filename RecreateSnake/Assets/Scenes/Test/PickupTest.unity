@@ -2586,10 +2586,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2133565388, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
-      propertyPath: _moveTime
-      value: 0.15
-      objectReference: {fileID: 0}
     - target: {fileID: 2106337632333986473, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2650,22 +2646,6 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 403586367}
-    - target: {fileID: 5193588779901653830, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
-      propertyPath: _snakeLength
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5193588779901653830, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
-      propertyPath: _timePerBlob
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096086212208113419, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
-      propertyPath: _maxInputTime
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096086212208113419, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
-      propertyPath: _minInputTime
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233c9610d12eab34b84fe355e21bdf37, type: 3}
 --- !u!114 &1763319683046017785 stripped
