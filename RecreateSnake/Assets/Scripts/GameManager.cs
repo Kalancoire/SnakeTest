@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
             int points = _pickupDict[value].Points;
             _playerData.IncreaseLength();
             UpdateScore(points);
+            _snakeBlobPositions.Enqueue(position);
             _gameState.SetValue(position, GridValueSnake);
             if (_playerData.SnakeLength != _gameState.TileCount)
             {
